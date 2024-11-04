@@ -1,0 +1,110 @@
+[
+    {
+        "CLIENTEID": 33,
+        "NOME": "Gabriel Ramalho",
+        "ENDERECO": "Rua Catarina Afonso 22",
+        "TELEFONE": "1928345123",
+        "EMAIL": "gabriel.ramalho@gmail.com",
+        "SENHA": "GabrielRamalho123",
+        "CPF": "12345678990"
+    },
+    {
+        "CLIENTEID": 1,
+        "NOME": "Pedro Martins",
+        "ENDERECO": "Rua das Flores, 10",
+        "TELEFONE": "2222-3331",
+        "EMAIL": "pedro.martins@example.com",
+        "SENHA": "XyZ123!@#",
+        "CPF": "11122233344"
+    },
+    {
+        "CLIENTEID": 2,
+        "NOME": "Juliana Ferreira",
+        "ENDERECO": "Avenida Brasil, 200",
+        "TELEFONE": "2222-3332",
+        "EMAIL": "juliana.ferreira@example.com",
+        "SENHA": "abcDEF456$%",
+        "CPF": "55566677788"
+    },
+    {
+        "CLIENTEID": 3,
+        "NOME": "Bruno Santos",
+        "ENDERECO": "Rua do Sol, 35",
+        "TELEFONE": "2222-3333",
+        "EMAIL": "bruno.santos@example.com",
+        "SENHA": "Pass9876&*",
+        "CPF": "99988877766"
+    },
+    {
+        "CLIENTEID": 4,
+        "NOME": "Larissa Costa",
+        "ENDERECO": "Alameda das Acácias, 123",
+        "TELEFONE": "2222-3334",
+        "EMAIL": "larissa.costa@example.com",
+        "SENHA": "LmNopq7890",
+        "CPF": "44455566677"
+    },
+    {
+        "CLIENTEID": 5,
+        "NOME": "Thiago Almeida",
+        "ENDERECO": "Rua Nova, 456",
+        "TELEFONE": "2222-3335",
+        "EMAIL": "thiago.almeida@example.com",
+        "SENHA": "Qwerty!234",
+        "CPF": "33322211100"
+    },
+    {
+        "CLIENTEID": 6,
+        "NOME": "Gabriela Rodrigues",
+        "ENDERECO": "Avenida Paulista, 789",
+        "TELEFONE": "2222-3336",
+        "EMAIL": "gabriela.rodrigues@example.com",
+        "SENHA": "AsDfGh123$",
+        "CPF": "88877766655"
+    },
+    {
+        "CLIENTEID": 7,
+        "NOME": "Felipe Mendes",
+        "ENDERECO": "Rua dos Pinheiros, 67",
+        "TELEFONE": "2222-3337",
+        "EMAIL": "felipe.mendes@example.com",
+        "SENHA": "ZxcVbN987^",
+        "CPF": "66655544433"
+    },
+    {
+        "CLIENTEID": 8,
+        "NOME": "Amanda Barbosa",
+        "ENDERECO": "Rua Augusta, 890",
+        "TELEFONE": "2222-3338",
+        "EMAIL": "amanda.barbosa@example.com",
+        "SENHA": "1a2b3c4d5e",
+        "CPF": "77788899900"
+    },
+    {
+        "CLIENTEID": 9,
+        "NOME": "Gustavo Lima",
+        "ENDERECO": "Avenida Ipiranga, 910",
+        "TELEFONE": "2222-3339",
+        "EMAIL": "gustavo.lima@example.com",
+        "SENHA": "P@ssw0rd!",
+        "CPF": "22233344455"
+    },
+    {
+        "CLIENTEID": 10,
+        "NOME": "Carolina Castro",
+        "ENDERECO": "Rua Harmonia, 112",
+        "TELEFONE": "2222-3340",
+        "EMAIL": "carolina.castro@example.com",
+        "SENHA": "Secure4567#",
+        "CPF": "12345678900"
+    },
+    {
+        "CLIENTEID": 16,
+        "NOME": "Brenno Vilela",
+        "ENDERECO": null,
+        "TELEFONE": "11977471064",
+        "EMAIL": "brenno.cauet@gmail.com",
+        "SENHA": "Teste123",
+        "CPF": "094.791.456"
+    }
+]

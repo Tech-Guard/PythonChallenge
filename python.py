@@ -243,21 +243,44 @@ def importar_cliente_api_externa(conn):
                     # Extração de dados do usuário com tratamento para campos ausentes
                     nome = user.get('nome', 'Nome Desconhecido')
                     endereco = 'Endereço não fornecido'  # Endereço não presente nos dados da API
-                    telefone = user.get('telefone', 'Telefone não fornecido')
-                    email = user.get('email', 'Email não fornecido')
+                    telefone = user.get('telefone', None)
+                    email = user.get('email', None)
                     senha = user.get('senha', 'Senha não fornecida')
 
                     # Tratamento de CPF, garantindo que apenas números sejam usados
                     cpf = ''.join(filter(str.isdigit, user.get('cpf', '')))[:11]
                     if not cpf or len(cpf) < 11:
                         cpf = cpf.ljust(11, '0')  # Completa com zeros se necessário
-                    
-                    # Inserção no banco de dados
+
+                    # Verificar campos obrigatórios
+                    if not cpf or not email or not telefone:
+                        print(f"Dados insuficientes para o cliente {nome}. CPF, Email e Telefone são obrigatórios.")
+                        continue
+
                     cursor = conn.cursor()
+
+                    # Verificar se já existe um cliente com o mesmo CPF, Email ou Telefone
+                    cursor.execute("""
+                        SELECT COUNT(*) FROM T_CHALLENGE_CLIENTES
+                        WHERE Cpf = :cpf OR Email = :email OR Telefone = :telefone
+                    """, {'cpf': cpf, 'email': email, 'telefone': telefone})
+                    result = cursor.fetchone()
+                    if result[0] > 0:
+                        print(f"Cliente já existe: Nome: {nome}, CPF: {cpf}")
+                        continue  # Pular para o próximo cliente
+
+                    # Inserção no banco de dados
                     cursor.execute("""
                         INSERT INTO T_CHALLENGE_CLIENTES (Nome, Endereco, Telefone, Email, Senha, Cpf)
                         VALUES (:nome, :endereco, :telefone, :email, :senha, :cpf)
-                    """, [nome, endereco, telefone, email, senha, cpf])
+                    """, {
+                        'nome': nome,
+                        'endereco': endereco,
+                        'telefone': telefone,
+                        'email': email,
+                        'senha': senha,
+                        'cpf': cpf
+                    })
                     conn.commit()
                     print(f"Cliente importado: Nome: {nome}, CPF: {cpf}")
             else:
@@ -265,9 +288,11 @@ def importar_cliente_api_externa(conn):
         else:
             print("Falha ao obter dados da API externa.")
     except oracledb.IntegrityError as e:
-        print("Erro ao inserir cliente importado: Possível duplicação de CPF, Email ou Telefone.")
+        error_obj, = e.args
+        print(f"Erro ao inserir cliente importado: {error_obj.message}")
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
+
 
 
 def menu_clientes(conn):
